@@ -1,6 +1,6 @@
 {
   "name": "name-color",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A basic command line utility which finds the name of a colour from hex codes which you input.",
   "bin": {
     "namecolor": "bin/colorname.js"
