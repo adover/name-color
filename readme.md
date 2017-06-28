@@ -1,4 +1,5 @@
-A basic command line utility which leverages [color-namer](https://www.npmjs.com/package/color-namer) and [inquirer](https://www.npmjs.com/package/inquirer) to find the name of a colour from hex codes which you input.
+#Name Color
+A basic command line utility which leverages [color-namer](https://www.npmjs.com/package/color-namer) and [inquirer](https://www.npmjs.com/package/inquirer) to find the name of a color from hex codes which you input.
 
 #Installation
 
