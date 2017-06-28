@@ -18,7 +18,7 @@ const question = {
 const userArgs = process.argv.slice(2);
 
 clear();
-console.log(chalk.bold.white.bgRed('                    '));
+console.log(chalk.bold.white.bgRed('\r\n                    '));
 console.log(chalk.bold.white.bgRed('  Find that colour  '));
 console.log(chalk.bold.white.bgRed('                    \r\n'));
 
@@ -33,11 +33,14 @@ function doAnswer(answer) {
 			console.log(`${k} result: ${v[0].name}`);
 		});
 	}catch(e) {
-		doQuestion(question, doAnswer);
+		console.log(chalk.bold.white.bgYellow('\r\n                                                               '));
+		console.log(chalk.bold.white.bgYellow('  That didn\'t work. Perhaps you put in an invalid color name?  '));
+		console.log(chalk.bold.white.bgYellow('                                                               \r\n'));
+
 	}
 }
 
-(function doQuestion(q, doAnswer) {
+const doQuestion = (q, doAnswer) => {
 
 	inquirer.prompt([q]).then((answer) => {
 
@@ -52,7 +55,9 @@ function doAnswer(answer) {
 		doQuestion(q, doAnswer);
 
 	}, (e) => {
-		console.log(e)
+		console.log(chalk.bold.white.bgYellow('That didn\'t work. Perhaps you put in an invalid color name?'));
+		doQuestion(q, doAnswer);
 	});
+}
 
-}(question, doAnswer));
+(doQuestion(question, doAnswer));
